@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>CV — Ma Đức Anh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #1e293b;
+    background: #fff;
+    font-size: 8.8pt;
+    line-height: 1.45;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20px 26px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media print {
+    body { padding: 18px 22px 14px; }
+    .no-print { display: none !important; }
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2.5px solid #0d9488;
+    margin-bottom: 12px;
+  }
+  .photo {
+    width: 78px; height: 96px;
+    border-radius: 6px; overflow: hidden;
+    border: 2px solid #e2e8f0;
+    flex-shrink: 0;
+    background: #f8fafc;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #cbd5e1; }
+  .header-text { flex: 1; }
+  .name { font-size: 19pt; font-weight: 700; color: #0f172a; letter-spacing: -0.5px; line-height: 1; }
+  .role { font-size: 9.5pt; font-weight: 600; color: #0d9488; margin: 3px 0 7px; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 20px;
+    font-size: 8pt;
+    color: #475569;
+  }
+  .contact-grid .lbl { color: #94a3b8; }
+  .contact-grid a { color: #0d9488; text-decoration: none; }
+
+  /* ── SECTION ── */
+  .sec { margin-bottom: 10px; }
+  .sec-title {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background: #0d9488;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    display: inline-block;
+  }
+
+  /* ── SUMMARY ── */
+  .summary {
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  /* ── HIGHLIGHTS ── */
+  .highlights {
+    display: flex;
+    gap: 0;
+    margin: 10px 0;
+    border: 1.5px solid #99f6e4;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .hl {
+    flex: 1;
+    text-align: center;
+    padding: 6px 4px;
+    background: #f0fdfa;
+    border-right: 1px solid #99f6e4;
+  }
+  .hl:last-child { border-right: none; }
+  .hl-n { font-size: 14pt; font-weight: 700; color: #0d9488; line-height: 1; }
+  .hl-l { font-size: 6.5pt; color: #64748b; margin-top: 1px; }
+
+  /* ── EXPERIENCE ── */
+  .job { margin-bottom: 8px; }
+  .job-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-weight: 700; font-size: 9pt; color: #0f172a; }
+  .job-date { font-size: 7.5pt; color: #64748b; white-space: nowrap; font-weight: 500; }
+  .job-co { font-size: 8pt; color: #0d9488; font-weight: 500; margin-bottom: 3px; }
+
+  ul { padding-left: 14px; }
+  li { margin-bottom: 1.5px; font-size: 8.3pt; color: #334155; line-height: 1.45; }
+  li strong { color: #0f172a; font-weight: 600; }
+
+  /* ── SKILLS ── */
+  .sk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 16px;
+  }
+  .sk-row { font-size: 8pt; display: flex; gap: 4px; }
+  .sk-cat { font-weight: 600; color: #0f172a; min-width: 76px; flex-shrink: 0; }
+  .sk-val { color: #475569; }
+
+  /* ── EDUCATION ── */
+  .edu-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .edu-deg { font-weight: 600; font-size: 8.5pt; }
+  .edu-sch { font-size: 8pt; color: #475569; }
+  .edu-note { font-size: 7.5pt; color: #64748b; font-style: italic; }
+
+  /* ── BOTTOM ROW ── */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    margin-top: 2px;
+  }
+  .bottom-row .sec { margin-bottom: 4px; }
+
+  .lang { font-size: 8pt; }
+  .lang b { font-weight: 600; }
+  .interests { font-size: 7.8pt; color: #475569; line-height: 1.4; }
+  .ref { font-size: 7.5pt; color: #64748b; font-style: italic; margin-top: 3px; }
+
+  /* ── CERT ── */
+  .cert-box {
+    font-size: 8pt; color: #475569;
+    padding: 5px 8px;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.45;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 7pt;
+    color: #94a3b8;
+  }
+
+  /* ── PRINT BTN ── */
+  .pbtn {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #0d9488; color: #fff; border: none;
+    padding: 10px 20px; border-radius: 8px; cursor: pointer;
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    box-shadow: 0 4px 16px rgba(13,148,136,0.3);
+  }
+  .pbtn:hover { background: #0f766e; }
+</style>
+</head>
+<body>
+
+<button class="pbtn no-print" onclick="window.print()">🖨️ In / Lưu PDF</button>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="photo">
+    <img src="assets/photos/avatar.jpg" alt="Ma Đức Anh"
+         onerror="this.parentElement.innerHTML='<div class=photo-placeholder>👤</div>'" />
+  </div>
+  <div class="header-text">
+    <div class="name">MA ĐỨC ANH</div>
+    <div class="role">Operations & Automation Specialist</div>
+    <div class="contact-grid">
+      <div><span class="lbl">Email:</span> <a href="mailto:maducanh.work@gmail.com">maducanh.work@gmail.com</a></div>
+      <div><span class="lbl">Điện thoại:</span> 0825 937 727</div>
+      <div><span class="lbl">Ngày sinh:</span> 26/04/1996 · Nam</div>
+      <div><span class="lbl">Địa điểm:</span> Sapa / TP.HCM (Remote-ready)</div>
+      <div><span class="lbl">Portfolio:</span> <a href="https://ducanh-portfolio.com">ducanh-portfolio.com</a></div>
+      <div><span class="lbl">Trạng thái:</span> <strong style="color:#0d9488">Sẵn sàng nhận việc ngay</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TÓM TẮT ═══════════ -->
+<div class="sec">
+  <span class="sec-title">Tóm tắt</span>
+  <p class="summary">
+    Operations specialist với <strong>3+ năm</strong> vận hành CSKH đa kênh cho 3 brands e-commerce thuộc hệ sinh thái Độ Mixi (Mixer · Mixishop · Mixifood). Tự học lập trình và build internal app phục vụ hệ thống xử lý <strong>100K+ đơn hàng</strong>, chạy production phục vụ team 10 người hàng ngày. Tích hợp <strong>OpenAI / Gemini API</strong> vào workflow thực tế. Background đa dạng: hospitality khách quốc tế, freelance tour guide, event coordination.
+  </p>
+</div>
+
+<!-- ═══════════ HIGHLIGHTS ═══════════ -->
+<div class="highlights">
+  <div class="hl"><div class="hl-n">3+</div><div class="hl-l">năm production</div></div>
+  <div class="hl"><div class="hl-n">100K+</div><div class="hl-l">đơn qua hệ thống</div></div>
+  <div class="hl"><div class="hl-n">-70%</div><div class="hl-l">thời gian/đơn</div></div>
+  <div class="hl"><div class="hl-n">3</div><div class="hl-l">brands vận hành</div></div>
+  <div class="hl"><div class="hl-n">34+</div><div class="hl-l">events phối hợp</div></div>
+</div>
+
+<!-- ═══════════ KINH NGHIỆM ═══════════ -->
+<div class="sec">
+  <span class="sec-title">Kinh nghiệm làm việc</span>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="job-title">Operations & Automation Specialist</div>
+      <div class="job-date">2022 — Nay · 3+ năm</div>
+    </div>
+    <div class="job-co">Mixer · Mixishop · Mixifood — Hệ sinh thái Độ Mixi (Remote · Flexible hours)</div>
+    <ul>
+      <li><strong>Hệ thống tự build xử lý 100.000+ đơn hàng</strong> qua 4 kênh (Facebook, Zalo, Email, Hotline) cho 3 brands e-commerce — team CSKH 10 người, peak volume 2.000–3.000 đơn/tháng/brand</li>
+      <li><strong>Tự build internal app</strong> trên Google Apps Script / JavaScript: auto-parse thông tin khách, tính tiền, CRUD đơn, sinh QR thanh toán → <strong>giảm 70% thời gian xử lý</strong>, tỷ lệ sai sót từ ~15% xuống ~2%</li>
+      <li><strong>Tích hợp OpenAI / Gemini API</strong> vào workflow CSKH hàng ngày — tự động phân loại câu hỏi, sinh nội dung reply, soạn template phản hồi</li>
+      <li>Thiết kế banner, bảng size, ảnh sản phẩm cho team Marketing bằng AI tools — áp dụng trực tiếp lên Shopee / TikTok Shop</li>
+      <li>Chủ động phát triển tính năng mới → training & onboard toàn team sử dụng · Xây workflow quản lý tồn kho + thống kê bán hàng</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="job-title">Nhân viên CSKH — Khách đoàn nhà hàng</div>
+      <div class="job-date">07/2025 — Nay</div>
+    </div>
+    <div class="job-co">Indigo Restaurant Lá Chàm — Sapa</div>
+    <ul>
+      <li>Phục vụ <strong>5–20 đoàn/ngày</strong> (quy mô 4–50 khách/đoàn) — xử lý booking đa kênh (Zalo, điện thoại, Facebook) với tour operators</li>
+      <li>Vận hành on-site service trong peak season du lịch, phối hợp bếp + phục vụ cho đoàn lớn tới 50 khách</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="job-title">Freelance: Tour Guide · Event Coordinator · Designer</div>
+      <div class="job-date">2018 — 2022</div>
+    </div>
+    <div class="job-co">Hà Nội (song song đại học)</div>
+    <ul>
+      <li>Hướng dẫn viên cho <strong>~20 đoàn học sinh THCS/THPT</strong> — đoàn lớn nhất 100+ học sinh, tự handle logistics từ A–Z</li>
+      <li>Hậu cần + support <strong>34+ events</strong> đa format (workshop, school trip, public event) · Design banner/poster cho doanh nghiệp nhỏ</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="job-title">Bartender → Supervisor (được promote)</div>
+      <div class="job-date">2016 — 2017</div>
+    </div>
+    <div class="job-co">Backpacker Hotel — Sapa</div>
+    <ul>
+      <li>Vận hành front-of-house cho khách quốc tế (Âu, Mỹ, Úc) — được <strong>promote từ bartender lên supervisor</strong> sau 6 tháng</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════ KỸ NĂNG ═══════════ -->
+<div class="sec">
+  <span class="sec-title">Kỹ năng</span>
+  <div class="sk-grid">
+    <div class="sk-row"><div class="sk-cat">Automation</div><div class="sk-val">Google Apps Script · JavaScript — 3 năm production</div></div>
+    <div class="sk-row"><div class="sk-cat">AI Integration</div><div class="sk-val">OpenAI API · Gemini API · Prompt Engineering</div></div>
+    <div class="sk-row"><div class="sk-cat">Operations</div><div class="sk-val">CSKH đa kênh · Order processing · Quản lý tồn kho</div></div>
+    <div class="sk-row"><div class="sk-cat">Web Dev</div><div class="sk-val">HTML · CSS · JS · React · TypeScript</div></div>
+    <div class="sk-row"><div class="sk-cat">Design</div><div class="sk-val">Photoshop · Canva · AI Design Tools</div></div>
+    <div class="sk-row"><div class="sk-cat">Productivity</div><div class="sk-val">Google Workspace · Notion · Airtable · Git</div></div>
+  </div>
+</div>
+
+<!-- ═══════════ HỌC VẤN + CHỨNG CHỈ ═══════════ -->
+<div class="bottom-row">
+  <div class="sec">
+    <span class="sec-title">Học vấn</span>
+    <div class="edu-top">
+      <div class="edu-deg">Cử nhân Việt Nam Học</div>
+      <div class="job-date">2017 — 2024</div>
+    </div>
+    <div class="edu-sch">Đại học Thăng Long, Hà Nội</div>
+    <div class="edu-note">Vừa học vừa làm — song song freelance & hospitality xuyên suốt chương trình</div>
+  </div>
+  <div class="sec">
+    <span class="sec-title">Chứng chỉ & Đào tạo</span>
+    <div class="cert-box">
+      Toàn bộ kỹ năng tech (Apps Script, JS, AI API, Web Dev) <strong>tự học qua giải quyết vấn đề thực tế</strong> — 3+ năm. Internal app production chạy hàng ngày là minh chứng thực chiến. Chi tiết: Portfolio.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ NGÔN NGỮ + SỞ THÍCH ═══════════ -->
+<div class="bottom-row">
+  <div class="sec">
+    <span class="sec-title">Ngôn ngữ</span>
+    <div class="lang">
+      <b>Tiếng Việt:</b> Bản ngữ<br>
+      <b>Tiếng Anh:</b> Conversational — giao tiếp khách quốc tế (Âu, Mỹ, Úc) + đọc tài liệu tech thông thạo
+    </div>
+  </div>
+  <div class="sec">
+    <span class="sec-title">Sở thích</span>
+    <div class="interests">
+      Khám phá AI tools mới · Trekking & leo núi · Đọc về product/ops · Build side projects · Pha chế đồ uống
+    </div>
+    <div class="ref">Người tham chiếu: sẵn sàng cung cấp khi nhà tuyển dụng yêu cầu.</div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  Portfolio đầy đủ + Case Study tại: ducanh-portfolio.com · CV cập nhật tháng 06/2026
+</div>
+
+</body>
+</html>

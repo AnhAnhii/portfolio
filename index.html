@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark" data-lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ma Đức Anh — From Sapa to Code</title>
+  <meta name="description" content="Ma Đức Anh — Từ Sapa đến Tech. Operations specialist tự build internal tools, tích hợp AI vào workflow, thiết kế mọi thứ cần thiết." />
+  <meta name="author" content="Ma Đức Anh" />
+  <meta property="og:title" content="Ma Đức Anh — From Sapa to Code" />
+  <meta property="og:description" content="Từ Sapa đến Tech. Operations specialist tự build tools, tích hợp AI vào workflow hàng ngày." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/photos/avatar.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>" />
+</head>
+<body>
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo"><span class="nav-logo-icon">🏔️</span>Đức<span class="nav-logo-dot">.</span><span class="gold">Anh</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">Về tôi</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Dự án</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Hành trình</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Liên hệ</a></li>
+      </ul>
+
+      <div class="nav-status">
+        <span class="pulse-dot"></span>
+        <span class="status-text" data-i18n="nav.status">Sẵn sàng nhận việc (Full-time / Remote)</span>
+      </div>
+
+      <div class="nav-controls">
+        <button class="theme-toggle" aria-label="Toggle theme">☀️</button>
+        <button class="lang-toggle" aria-label="Toggle language">EN</button>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="#about" class="nav-link" data-i18n="nav.about">Về tôi</a>
+    <a href="#projects" class="nav-link" data-i18n="nav.projects">Dự án</a>
+    <a href="#experience" class="nav-link" data-i18n="nav.experience">Hành trình</a>
+    <a href="#contact" class="nav-link" data-i18n="nav.contact">Liên hệ</a>
+  </div>
+
+  <!-- ======== HERO — Mountains & Mist ======== -->
+  <section id="hero" class="section">
+    <canvas id="fog-canvas"></canvas>
+    <div class="horizon-glow"></div>
+
+    <!-- Mountain silhouettes (simplified/geometric) -->
+    <div class="mountains">
+      <!-- Far mountains -->
+      <div class="mountain-layer mountain-far" data-parallax="0.15">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none" style="width:100%;height:200px;">
+          <path d="M0,320 L0,220 Q120,120 240,180 Q360,100 480,150 Q600,60 720,130 Q840,80 960,110 Q1080,50 1200,140 Q1320,90 1440,160 L1440,320 Z"/>
+        </svg>
+      </div>
+      <!-- Mid mountains -->
+      <div class="mountain-layer mountain-mid" data-parallax="0.08">
+        <svg viewBox="0 0 1440 260" preserveAspectRatio="none" style="width:100%;height:170px;">
+          <path d="M0,260 L0,180 Q100,130 200,160 Q350,80 500,140 Q650,100 800,120 Q950,60 1100,110 Q1250,80 1440,130 L1440,260 Z"/>
+        </svg>
+      </div>
+      <!-- Near mountains -->
+      <div class="mountain-layer mountain-near" data-parallax="0.03">
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none" style="width:100%;height:130px;">
+          <path d="M0,200 L0,160 Q180,120 360,150 Q540,110 720,140 Q900,100 1080,130 Q1260,110 1440,140 L1440,200 Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span data-i18n="hero.badge">Operations · Automation · AI Integration</span>
+      </div>
+      <p class="hero-greeting" data-i18n="hero.greeting">xin chào, mình là</p>
+      <h1 class="hero-name">MA <span class="gold">ĐỨC ANH</span></h1>
+      <p class="hero-tagline" data-i18n="hero.tagline">Tự build tools cho team — từ Google Sheets đến AI API</p>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">3+ năm vận hành CSKH cho hệ sinh thái Độ Mixi. Tự học lập trình, build app nội bộ chạy production, tích hợp AI vào workflow hàng ngày.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.portfolio">Xem dự án</a>
+        <a href="assets/CV-Ma-Duc-Anh.pdf" class="btn btn-outline" download data-i18n="hero.cta.cv">📄 Tải CV</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero.cta.contact">Liên hệ</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
+    </div>
+  </section>
+
+  <!-- ======== ABOUT — The story ======== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal-left">
+          <img src="assets/photos/avatar.jpg" alt="Ma Đức Anh" class="about-image" onerror="this.style.background='var(--bg-elevated)'" />
+        </div>
+        <div class="about-text">
+          <span class="section-label reveal" data-i18n="about.label">Về tôi</span>
+          <h2 class="section-title reveal reveal-delay-1" data-i18n="about.title">Từ <span class="gold">Sapa</span> đến <span class="accent">Code</span></h2>
+          <div class="about-description">
+            <p class="reveal reveal-delay-2" data-i18n="about.p1">Bắt đầu từ bartender phục vụ khách quốc tế ở Sapa, mình dần chuyển hướng sang e-commerce và tự học lập trình qua giải quyết vấn đề thực tế hàng ngày.</p>
+            <p class="reveal reveal-delay-3" data-i18n="about.p2">3+ năm qua, mình build internal tools cho team CSKH 10 người trong hệ sinh thái Độ Mixi, tích hợp OpenAI & Gemini API vào workflow vận hành, và thiết kế mọi thứ từ banner marketing đến hệ thống quản lý đơn hàng tự động.</p>
+          </div>
+          <blockquote class="about-quote reveal reveal-delay-4" data-i18n="about.quote">
+            Không chờ ai code — tự build luôn. Làm ra rồi không bỏ đó, chạy production 3+ năm.
+          </blockquote>
+          <div class="about-stats reveal reveal-delay-5">
+            <div class="stat-item">
+              <div class="stat-number counter" data-target="3" data-suffix="+">0</div>
+              <div class="stat-label" data-i18n="about.stat.years">Năm production</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number counter" data-target="9" data-suffix="K+">0</div>
+              <div class="stat-label" data-i18n="about.stat.orders">Đơn đã xử lý</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number counter" data-target="3" data-suffix="">0</div>
+              <div class="stat-label" data-i18n="about.stat.brands">Brands phục vụ</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number counter" data-target="34" data-suffix="+">0</div>
+              <div class="stat-label" data-i18n="about.stat.events">Events phối hợp</div>
+            </div>
+          </div>
+
+          <!-- Skill tags merged into About -->
+          <div class="about-skills reveal reveal-delay-6">
+            <div class="about-skill-group">
+              <span class="about-skill-label">Ops</span>
+              <div class="skill-tags">
+                <span class="skill-tag">Multi-channel CS</span>
+                <span class="skill-tag">Order Processing</span>
+                <span class="skill-tag">Event Coordination</span>
+                <span class="skill-tag">Tour Guide</span>
+              </div>
+            </div>
+            <div class="about-skill-group">
+              <span class="about-skill-label">Tech</span>
+              <div class="skill-tags">
+                <span class="skill-tag">Google Apps Script</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">OpenAI API</span>
+                <span class="skill-tag">Gemini API</span>
+                <span class="skill-tag">HTML / CSS</span>
+              </div>
+            </div>
+            <div class="about-skill-group">
+              <span class="about-skill-label">Design</span>
+              <div class="skill-tags">
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag">Canva</span>
+                <span class="skill-tag">AI Design Tools</span>
+              </div>
+            </div>
+            <div class="about-skill-group">
+              <span class="about-skill-label">Tools</span>
+              <div class="skill-tags">
+                <span class="skill-tag">Google Workspace</span>
+                <span class="skill-tag">Notion</span>
+                <span class="skill-tag">Airtable</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PROJECTS ======== -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-label reveal" data-i18n="projects.label">Dự án</span>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="projects.title">Sản phẩm <span class="accent">thực tế</span></h2>
+        <p class="section-subtitle reveal reveal-delay-2" data-i18n="projects.subtitle">Không phải side project — là tool đang chạy production, đang phục vụ team thật mỗi ngày.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Featured -->
+        <div class="project-card featured reveal" data-project-id="1">
+          <div class="project-image-wrapper">
+            <img src="assets/projects/mixer-app.png" alt="Mixer Order Management App" class="project-image" data-full="assets/projects/mixer-app.png" onerror="this.parentElement.innerHTML='<div class=\'project-placeholder\'>📊<span>mixer-app.png</span></div>'" />
+            <div class="overlay"></div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title" data-i18n="project.1.title">Mixer Order Management App</h3>
+            <p class="project-desc" data-i18n="project.1.desc">Giảm 70% thời gian xử lý đơn cho team 10 người. Tự động tách thông tin khách, tính tiền, sinh QR thanh toán. Chạy production 3+ năm, hệ thống xử lý 100K+ đơn hàng.</p>
+            <div class="project-tags">
+              <span class="tag accent">Google Apps Script</span>
+              <span class="tag accent">JavaScript</span>
+              <span class="tag gold">Production 3+ yrs</span>
+              <span class="tag">10-person team</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-grid-inner">
+          <div class="project-card reveal reveal-delay-1" data-project-id="2">
+            <div class="project-image-wrapper">
+              <img src="assets/projects/restaurant-ops.png" alt="Restaurant Ops PWA" class="project-image" data-full="assets/projects/case-restaurant.png" onerror="this.parentElement.innerHTML='<div class=\'project-placeholder\'>🍜<span>restaurant-ops.png</span></div>'" />
+              <div class="overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-i18n="project.2.title">Restaurant Ops PWA</h3>
+              <p class="project-desc" data-i18n="project.2.desc">Xây dựng hệ thống vận hành nhà hàng từ đầu — quản lý tour booking, theo dõi order real-time, OCR hóa đơn tự động. React + TypeScript + Supabase.</p>
+              <div class="project-tags">
+                <span class="tag accent">React</span>
+                <span class="tag accent">TypeScript</span>
+                <span class="tag">Supabase</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-2" data-project-id="3">
+            <div class="project-image-wrapper">
+              <img src="assets/projects/mixer-sizing.png" alt="Product Design" class="project-image" data-full="assets/projects/case-design.png" onerror="this.parentElement.innerHTML='<div class=\'project-placeholder\'>🎨<span>mixer-sizing.png</span></div>'" />
+              <div class="overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-i18n="project.3.title">Product Design — Mixer Brand</h3>
+              <p class="project-desc" data-i18n="project.3.desc">Thiết kế bảng size, thông số chi tiết cho 3 dòng sản phẩm Mixer. Dùng AI tạo mockup + layout, team Marketing áp dụng trực tiếp lên Shopee/TikTok Shop.</p>
+              <div class="project-tags">
+                <span class="tag gold">AI-generated</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-3" data-project-id="4">
+            <div class="project-image-wrapper">
+              <img src="assets/projects/mixishop-campaign.png" alt="Marketing Campaign" class="project-image" data-full="assets/projects/case-campaign.png" onerror="this.parentElement.innerHTML='<div class=\'project-placeholder\'>📣<span>mixishop-campaign.png</span></div>'" />
+              <div class="overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-i18n="project.4.title">Marketing Campaign — MixiShop</h3>
+              <p class="project-desc" data-i18n="project.4.desc">Banner chiến dịch Summer Fest thu hút hàng nghìn lượt tương tác. Sale 20% + quay thưởng trực tiếp. Thiết kế bằng AI + Canva trong 1 buổi chiều.</p>
+              <div class="project-tags">
+                <span class="tag gold">AI-generated</span>
+                <span class="tag">Marketing</span>
+                <span class="tag">Campaign</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-4" data-project-id="5">
+            <div class="project-image-wrapper">
+              <img src="assets/projects/mixishop-system.png" alt="Mixishop Order System" class="project-image" data-full="assets/projects/case-mixishop.png" onerror="this.parentElement.innerHTML='<div class=\'project-placeholder\'>🛒<span>mixishop-system.png</span></div>'" />
+              <div class="overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-i18n="project.5.title">Mixishop — Hệ thống xử lý đơn</h3>
+              <p class="project-desc" data-i18n="project.5.desc">Script tự động lọc 75+ cột → 20 cột cần thiết, gộp đơn theo SĐT, sidebar UI custom trong Google Sheets. Xử lý 3.300+ đơn/batch cho team CSKH.</p>
+              <div class="project-tags">
+                <span class="tag accent">Google Apps Script</span>
+                <span class="tag gold">AI-built</span>
+                <span class="tag">Sidebar UI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-5" data-project-id="6">
+            <div class="project-image-wrapper">
+              <img src="assets/projects/portfolio-site.png" alt="Portfolio Website" class="project-image" data-full="assets/projects/case-portfolio.png" onerror="this.parentElement.innerHTML='<div class=\'project-placeholder\'>🏔️<span>portfolio-site.png</span></div>'" />
+              <div class="overlay"></div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title" data-i18n="project.6.title">Portfolio này — Built with AI</h3>
+              <p class="project-desc" data-i18n="project.6.desc">Trang web bạn đang xem — thiết kế cùng AI từ ý tưởng đến deploy. Vanilla HTML/CSS/JS, parallax núi, song ngữ VI/EN, không dùng framework.</p>
+              <div class="project-tags">
+                <span class="tag accent">HTML / CSS / JS</span>
+                <span class="tag gold">AI-assisted</span>
+                <span class="tag">i18n</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== EXPERIENCE — Winding mountain trail ======== -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <span class="section-label reveal" data-i18n="experience.label">Hành trình</span>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="experience.title">Con đường <span class="gold">leo núi</span></h2>
+
+      <div class="trail-wrapper">
+        <!-- SVG winding path (extended for 5 stops) -->
+        <svg class="trail-svg" viewBox="0 0 800 1100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="trail-path" d="
+            M 400 0
+            C 400 60, 180 90, 180 140
+            C 180 190, 620 210, 620 260
+            C 620 330, 180 360, 180 420
+            C 180 480, 620 510, 620 570
+            C 620 640, 180 670, 180 730
+            C 180 790, 620 820, 620 880
+            C 620 950, 400 1000, 400 1100
+          "/>
+          <path class="trail-path-draw" d="
+            M 400 0
+            C 400 60, 180 90, 180 140
+            C 180 190, 620 210, 620 260
+            C 620 330, 180 360, 180 420
+            C 180 480, 620 510, 620 570
+            C 620 640, 180 670, 180 730
+            C 180 790, 620 820, 620 880
+            C 620 950, 400 1000, 400 1100
+          "/>
+        </svg>
+
+        <div class="trail-items">
+          <!-- Stop 1: Current position (gold) — LEFT -->
+          <div class="trail-stop reveal">
+            <div class="trail-marker">
+              <span class="trail-marker-label" data-i18n="trail.here">● bạn đang ở đây</span>
+            </div>
+            <div class="trail-content">
+              <div class="trail-date" data-i18n="exp.1.date">2022 — Nay</div>
+              <div class="trail-header">
+                <img src="assets/logos/mixer.png" alt="Mixer" class="trail-logo" onerror="this.style.display='none'" />
+                <div>
+                  <h3 class="trail-role" data-i18n="exp.1.role">CSKH, Sales & Tự động hóa Vận hành (Remote)</h3>
+                  <div class="trail-company" data-i18n="exp.1.company">Mixer · Mixishop · Mixifood — Hệ sinh thái Độ Mixi</div>
+                </div>
+              </div>
+              <ul class="trail-details">
+                <li data-i18n="exp.1.d1">CSKH đa kênh cho 3 brands, team 10 người, peak 2-3K đơn/tháng/brand</li>
+                <li data-i18n="exp.1.d2">Tự build internal app (Apps Script) cho quản lý đơn hàng — production 3+ năm</li>
+                <li data-i18n="exp.1.d3">Tích hợp OpenAI/Gemini API vào workflow CSKH hàng ngày</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Stop 2 — RIGHT -->
+          <div class="trail-stop reveal">
+            <div class="trail-marker"></div>
+            <div class="trail-content">
+              <div class="trail-date" data-i18n="exp.2.date">07/2025 — Nay</div>
+              <div class="trail-header">
+                <img src="assets/logos/indigo.png" alt="Indigo" class="trail-logo" onerror="this.style.display='none'" />
+                <div>
+                  <h3 class="trail-role" data-i18n="exp.2.role">Hỗ trợ Vận hành & Phục vụ (Part-time)</h3>
+                  <div class="trail-company" data-i18n="exp.2.company">Indigo Restaurant Lá Chàm — Sapa</div>
+                </div>
+              </div>
+              <ul class="trail-details">
+                <li data-i18n="exp.2.d1">Phục vụ 5-20 đoàn tour/ngày, quy mô 4-50 khách/đoàn</li>
+                <li data-i18n="exp.2.d2">Xử lý booking đa kênh với tour operators</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Stop 3 — LEFT -->
+          <div class="trail-stop reveal">
+            <div class="trail-marker"></div>
+            <div class="trail-content">
+              <div class="trail-date" data-i18n="exp.3.date">2018 — 2022</div>
+              <div class="trail-header">
+                <img src="assets/logos/freelance.png" alt="Freelance" class="trail-logo" onerror="this.style.display='none'" />
+                <div>
+                  <h3 class="trail-role" data-i18n="exp.3.role">Freelance: Tour Guide + Event + Design</h3>
+                  <div class="trail-company" data-i18n="exp.3.company">Hà Nội</div>
+                </div>
+              </div>
+              <ul class="trail-details">
+                <li data-i18n="exp.3.d1">Hướng dẫn ~20 đoàn học sinh, đoàn lớn nhất 100+ người</li>
+                <li data-i18n="exp.3.d2">Hậu cần ~34 events đa dạng format</li>
+                <li data-i18n="exp.3.d3">Design banner, poster cho doanh nghiệp nhỏ</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Stop 4: Education — RIGHT (overlapping with work!) -->
+          <div class="trail-stop trail-stop-edu reveal">
+            <div class="trail-marker trail-marker-edu"></div>
+            <div class="trail-content trail-content-edu">
+              <div class="trail-date" data-i18n="edu.date">2017 — 2024</div>
+              <div class="edu-header">
+                <img src="assets/education/thanglong-logo.png" alt="Đại học Thăng Long" class="edu-logo" onerror="this.style.display='none'" />
+                <div>
+                  <h3 class="trail-role" data-i18n="edu.degree">Cử nhân Việt Nam Học</h3>
+                  <div class="trail-company" data-i18n="edu.school">Đại học Thăng Long — Hà Nội</div>
+                </div>
+              </div>
+              <div class="edu-badge" data-i18n="edu.badge">⚡ Vừa học vừa thực chiến</div>
+              <blockquote class="trail-edu-quote" data-i18n="edu.quote">
+                Sau giảng đường, mọi thứ từ code đến design đều tự mày mò qua thực chiến — sản phẩm chạy production là chứng chỉ tốt nhất.
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Stop 5: Bartender — LEFT (base of mountain = origin) -->
+          <div class="trail-stop reveal">
+            <div class="trail-marker"></div>
+            <div class="trail-content">
+              <div class="trail-date" data-i18n="exp.4.date">2016 — 2017</div>
+              <div class="trail-header">
+                <img src="assets/logos/backpacker.png" alt="Backpacker Hotel" class="trail-logo" onerror="this.style.display='none'" />
+                <div>
+                  <h3 class="trail-role" data-i18n="exp.4.role">Bartender & Trưởng ca vận hành (Supervisor)</h3>
+                  <div class="trail-company" data-i18n="exp.4.company">Backpacker Hotel Sapa</div>
+                </div>
+              </div>
+              <ul class="trail-details">
+                <li data-i18n="exp.4.d1">Vận hành front-of-house cho khách quốc tế (Âu, Mỹ, Úc)</li>
+                <li data-i18n="exp.4.d2">Được promote từ bartender lên supervisor</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PROCESS — How I work ======== -->
+  <section id="process" class="section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-label reveal" data-i18n="process.label">Quy trình</span>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="process.title">Cách mình <span class="gold">làm việc</span></h2>
+        <p class="section-subtitle reveal reveal-delay-2" data-i18n="process.subtitle">Dù build tool, thiết kế banner, hay quản lý 100+ người — quy trình luôn giống nhau.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="process-number">01</div>
+          <div class="process-content">
+            <h3 class="process-step-title" data-i18n="process.1.title">Nghe & Hiểu vấn đề</h3>
+            <p class="process-step-desc" data-i18n="process.1.desc">Không vội code hay thiết kế. Ngồi cạnh team, nghe pain point thật, hiểu workflow hiện tại đang tắc ở đâu.</p>
+          </div>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-number">02</div>
+          <div class="process-content">
+            <h3 class="process-step-title" data-i18n="process.2.title">Prototype nhanh</h3>
+            <p class="process-step-desc" data-i18n="process.2.desc">Build bản thử trong 1-2 ngày. Cho team dùng thử ngay, thu feedback sớm. Không cần hoàn hảo — cần hoạt động được.</p>
+          </div>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-number">03</div>
+          <div class="process-content">
+            <h3 class="process-step-title" data-i18n="process.3.title">Iterate & Polish</h3>
+            <p class="process-step-desc" data-i18n="process.3.desc">Cải tiến liên tục dựa trên thực tế sử dụng. Thêm feature khi team cần, bỏ feature không ai dùng.</p>
+          </div>
+        </div>
+        <div class="process-connector reveal"></div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="process-number">04</div>
+          <div class="process-content">
+            <h3 class="process-step-title" data-i18n="process.4.title">Maintain & Không bỏ dở</h3>
+            <p class="process-step-desc" data-i18n="process.4.desc">Sản phẩm chạy 3+ năm vì mình không bỏ. Bug fix, update, hỗ trợ team — trách nhiệm đến cùng.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PERSONAL — The human behind code ======== -->
+  <section id="personal" class="section section-alt">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-label reveal" data-i18n="personal.label">Con người</span>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="personal.title">Đằng sau <span class="accent">dòng code</span></h2>
+      </div>
+
+      <div class="personal-grid">
+        <div class="personal-story reveal">
+          <p data-i18n="personal.p1">Lớn lên ở Sapa — nơi mọi sáng thức dậy là mây mù phủ kín thung lũng và con đường nào cũng dốc. Có lẽ vì vậy mà mình quen với việc leo, quen với việc mò mẫm trong sương, và không ngại con đường dài.</p>
+          <p data-i18n="personal.p2">Từ pha cocktail cho khách Tây ở Sapa, dẫn đoàn 100+ sinh viên giữa Hà Nội, đến ngồi remote code app cho team e-commerce — mỗi giai đoạn đều dạy mình một thứ: quan sát, lắng nghe, rồi hành động.</p>
+          <p data-i18n="personal.p3">Mình trầm tính nhưng luôn quan tâm. Khi nhận việc thì làm đến cùng. Khi build thì build để dùng thật, không phải để demo rồi bỏ.</p>
+        </div>
+
+        <div class="personal-gallery reveal reveal-delay-2">
+          <div class="gallery-item gallery-main">
+            <img src="assets/photos/sapa-1.jpg" alt="Sapa" onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>🏔️<span>sapa-1.jpg</span></div>'" />
+            <span class="gallery-caption" data-i18n="personal.img1">Sapa — nơi bắt đầu</span>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/work-1.jpg" alt="Working" onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>💻<span>work-1.jpg</span></div>'" />
+            <span class="gallery-caption" data-i18n="personal.img2">Workstation hàng ngày</span>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/photos/event-1.jpg" alt="Event" onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'>🎤<span>event-1.jpg</span></div>'" />
+            <span class="gallery-caption" data-i18n="personal.img3">Bản thân</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="personal-values reveal reveal-delay-3">
+        <div class="value-item">
+          <span class="value-emoji">🏔️</span>
+          <span class="value-text" data-i18n="personal.v1">Kiên nhẫn như leo núi</span>
+        </div>
+        <div class="value-item">
+          <span class="value-emoji">🔧</span>
+          <span class="value-text" data-i18n="personal.v2">Thấy vấn đề → Tự build giải pháp</span>
+        </div>
+        <div class="value-item">
+          <span class="value-emoji">🤝</span>
+          <span class="value-text" data-i18n="personal.v3">Trầm tính nhưng luôn quan tâm</span>
+        </div>
+        <div class="value-item">
+          <span class="value-emoji">✊</span>
+          <span class="value-text" data-i18n="personal.v4">Nhận rồi không bỏ dở</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== TESTIMONIALS — Marquee slideshow ======== -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header-center">
+        <span class="section-label reveal" data-i18n="testimonial.label">Đồng nghiệp nói gì</span>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="testimonial.title">Người thật, <span class="gold">lời thật</span></h2>
+      </div>
+    </div>
+
+    <div class="testimonial-marquee">
+      <div class="testimonial-track">
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonial.1.text">"Ông Anh này hồi đầu bảo em để anh thử làm cái app coi. Tưởng chơi chơi, ai ngờ 3 năm rồi cả team vẫn xài mỗi ngày. Mà hỏi gì sửa ngay, chả bao giờ kêu bận."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">TĐ</div>
+            <div>
+              <div class="testimonial-name" data-i18n="testimonial.1.name">Thành Đô</div>
+              <div class="testimonial-role" data-i18n="testimonial.1.role">CSKH — Mixer</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonial.2.text">"Anh Anh ít nói lắm, nhưng mà team có vấn đề gì là tự ngồi code giải quyết luôn. Sáng gửi bug, chiều đã xong. Kiểu người làm xong rồi mới nói."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">TK</div>
+            <div>
+              <div class="testimonial-name" data-i18n="testimonial.2.name">Trung Kiên</div>
+              <div class="testimonial-role" data-i18n="testimonial.2.role">CSKH — Mixer</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonial.3.text">"Hồi chạy event đoàn 100 người, mình lo hậu cần không xuể. Anh nhận phần logistics rồi handle hết, check danh sách từng người một. Xong việc mới thấy ổng lo kỹ thế nào."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">L</div>
+            <div>
+              <div class="testimonial-name" data-i18n="testimonial.3.name">Linh</div>
+              <div class="testimonial-role" data-i18n="testimonial.3.role">CTV Freelance</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonial.4.text">"Bạn Anh tự học code từ Google Sheets rồi build hẳn app cho team luôn. Hỏi đi học ở đâu bảo tự mày mò. Mà cái app chạy ổn hơn mấy tool trả phí nữa."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">H</div>
+            <div>
+              <div class="testimonial-name" data-i18n="testimonial.4.name">Hùng</div>
+              <div class="testimonial-role" data-i18n="testimonial.4.role">CSKH — Mixishop</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonial.5.text">"Nhờ Anh thiết kế banner, bảo dùng AI cũng được không. Ổng gửi lại mấy bản đẹp hơn mình tưởng tượng. Nhanh nữa, sáng nhờ chiều có."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">T</div>
+            <div>
+              <div class="testimonial-name" data-i18n="testimonial.5.name">Trang</div>
+              <div class="testimonial-role" data-i18n="testimonial.5.role">Marketing — Mixifood</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonial.6.text">"Cái hay là giao việc xong yên tâm không phải hỏi lại. Bảo xử lý cái gì là xử lý xong báo lại, không cần nhắc. Mấy năm rồi chưa thấy bỏ dở cái gì."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">Đ</div>
+            <div>
+              <div class="testimonial-name" data-i18n="testimonial.6.name">Đô</div>
+              <div class="testimonial-role" data-i18n="testimonial.6.role">Team Lead — Mixer</div>
+            </div>
+          </div>
+        </div>
+        <!-- Duplicated set for seamless loop -->
+        <div class="testimonial-card"><p class="testimonial-text">"Ông Anh này hồi đầu bảo em để anh thử làm cái app coi. Tưởng chơi chơi, ai ngờ 3 năm rồi cả team vẫn xài mỗi ngày."</p><div class="testimonial-author"><div class="testimonial-avatar">TĐ</div><div><div class="testimonial-name">Thành Đô</div><div class="testimonial-role">CSKH — Mixer</div></div></div></div>
+        <div class="testimonial-card"><p class="testimonial-text">"Anh Anh ít nói lắm, nhưng mà team có vấn đề gì là tự ngồi code giải quyết luôn. Sáng gửi bug, chiều đã xong."</p><div class="testimonial-author"><div class="testimonial-avatar">TK</div><div><div class="testimonial-name">Trung Kiên</div><div class="testimonial-role">CSKH — Mixer</div></div></div></div>
+        <div class="testimonial-card"><p class="testimonial-text">"Hồi chạy event đoàn 100 người, mình lo hậu cần không xuể. Anh nhận phần logistics rồi handle hết."</p><div class="testimonial-author"><div class="testimonial-avatar">L</div><div><div class="testimonial-name">Linh</div><div class="testimonial-role">CTV Freelance</div></div></div></div>
+        <div class="testimonial-card"><p class="testimonial-text">"Bạn Anh tự học code từ Google Sheets rồi build hẳn app cho team luôn. Hỏi đi học ở đâu bảo tự mày mò."</p><div class="testimonial-author"><div class="testimonial-avatar">H</div><div><div class="testimonial-name">Hùng</div><div class="testimonial-role">CSKH — Mixishop</div></div></div></div>
+        <div class="testimonial-card"><p class="testimonial-text">"Nhờ Anh thiết kế banner, bảo dùng AI cũng được không. Ổng gửi lại mấy bản đẹp hơn mình tưởng tượng."</p><div class="testimonial-author"><div class="testimonial-avatar">T</div><div><div class="testimonial-name">Trang</div><div class="testimonial-role">Marketing — Mixifood</div></div></div></div>
+        <div class="testimonial-card"><p class="testimonial-text">"Cái hay là giao việc xong yên tâm không phải hỏi lại. Bảo xử lý cái gì là xử lý xong báo lại."</p><div class="testimonial-author"><div class="testimonial-avatar">Đ</div><div><div class="testimonial-name">Đô</div><div class="testimonial-role">Team Lead — Mixer</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT ======== -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <span class="section-label reveal" data-i18n="contact.label">Liên hệ</span>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="contact.title">Cùng <span class="accent">leo tiếp</span>?</h2>
+
+      <div class="contact-grid">
+        <div class="reveal reveal-delay-2">
+          <p class="contact-subtitle" data-i18n="contact.subtitle">Sẵn sàng cho cơ hội mới. Hãy liên hệ với mình qua email hoặc mạng xã hội.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div class="contact-item-text">
+                <span class="contact-item-label" data-i18n="contact.email.label">Email</span>
+                <span class="contact-item-value"><a href="mailto:maducanh.work@gmail.com">maducanh.work@gmail.com</a></span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📱</div>
+              <div class="contact-item-text">
+                <span class="contact-item-label" data-i18n="contact.phone.label">Điện thoại</span>
+                <span class="contact-item-value"><a href="tel:+84825937727">0825 937 727</a></span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-item-text">
+                <span class="contact-item-label" data-i18n="contact.location.label">Địa điểm</span>
+                <span class="contact-item-value" data-i18n="contact.location.value">Sapa / Hồ Chí Minh (Remote-ready)</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✅</div>
+              <div class="contact-item-text">
+                <span class="contact-item-label" data-i18n="contact.avail.label">Sẵn sàng</span>
+                <span class="contact-item-value" data-i18n="contact.avail.value">Full-time, từ 02/06/2026</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/ma-%C4%91%E1%BB%A9c-anh-6170303a4/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/ducanh2096/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="mailto:maducanh.work@gmail.com" class="social-link" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal reveal-delay-3">
+          <div class="form-group">
+            <label class="form-label" for="contact-name" data-i18n="contact.form.name">Họ tên</label>
+            <input class="form-input" type="text" id="contact-name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-email" data-i18n="contact.form.email">Email</label>
+            <input class="form-input" type="email" id="contact-email" name="email" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message" data-i18n="contact.form.message">Tin nhắn</label>
+            <textarea class="form-textarea" id="contact-message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" data-i18n="contact.form.send">Gửi Email</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER with AI badge ======== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-text" data-i18n="footer.text">© 2026 Ma Đức Anh</p>
+        <div class="footer-ai-badge">
+          <span class="ai-dot"></span>
+          <span data-i18n="footer.ai">Designed & built with AI</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img src="" alt="" class="lightbox-img" />
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Dynamic Case Study Modal -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true">
+      <button class="modal-close" aria-label="Close modal">✕</button>
+      <div class="modal-content">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
