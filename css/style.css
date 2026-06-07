@@ -409,6 +409,15 @@ ul, ol { list-style: none; }
   color: var(--text-secondary);
 }
 
+.mobile-menu .mobile-menu-cta {
+  margin-top: var(--gap-md);
+  padding: 0.8rem 2.5rem;
+  font-size: var(--text-sm);
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 /* ============================================================
    4. HERO — Mountains & Mist
    ============================================================ */
@@ -448,6 +457,7 @@ ul, ol { list-style: none; }
   bottom: 0;
   left: -5%;
   width: 110%;
+  will-change: transform;
 }
 
 .mountain-far  { z-index: 1; }

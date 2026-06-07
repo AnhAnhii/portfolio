@@ -1035,6 +1035,7 @@
     }
 
     function draw() {
+      if (!isVisible) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const time = Date.now() * 0.001;
 
@@ -1061,12 +1062,28 @@
     }
 
     init();
-    draw();
+
+    // IntersectionObserver to pause loop when out of view
+    let isVisible = true;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          cancelAnimationFrame(animFrame);
+          draw();
+        } else {
+          cancelAnimationFrame(animFrame);
+        }
+      });
+    }, { threshold: 0.01 });
+    observer.observe(canvas);
 
     window.addEventListener('resize', () => {
       cancelAnimationFrame(animFrame);
       init();
-      draw();
+      if (isVisible) {
+        draw();
+      }
     });
   }
 
