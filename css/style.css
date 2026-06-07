@@ -2907,47 +2907,60 @@ body.modal-open {
 
 .mist-drift-cloud {
   position: absolute;
-  border-radius: 50%;
   pointer-events: none;
   will-change: transform;
-  transition: opacity var(--dur-slow) var(--ease-gentle);
+  mix-blend-mode: screen; /* Hide black, blend white smoke */
+  opacity: 0.15; /* Low opacity so it is visible but never obscures information */
+  filter: blur(8px); /* Soften smoke edges */
+  transition: opacity var(--dur-slow) var(--ease-gentle), filter var(--dur-slow) var(--ease-gentle);
+}
+
+.mist-drift-cloud img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.85;
 }
 
 .mist-cloud-1 {
   top: 15%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--mist-glow) 0%, var(--mist-soft) 60%, transparent 100%);
-  filter: blur(80px);
+  left: -15%;
+  width: 800px;
+  height: 800px;
 }
 
 .mist-cloud-2 {
   top: 45%;
-  right: -15%;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, var(--mist-glow) 0%, var(--mist-soft) 65%, transparent 100%);
-  filter: blur(100px);
+  right: -20%;
+  width: 1000px;
+  height: 1000px;
 }
 
 .mist-cloud-3 {
-  bottom: 10%;
-  left: -20%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, var(--mist-glow) 0%, var(--mist-soft) 60%, transparent 100%);
-  filter: blur(90px);
+  bottom: 15%;
+  left: -25%;
+  width: 900px;
+  height: 900px;
 }
 
 .mist-cloud-4 {
-  bottom: -10%;
-  right: 15%;
-  width: 900px;
-  height: 900px;
-  background: radial-gradient(circle, var(--mist-glow) 0%, var(--mist-soft) 70%, transparent 100%);
-  filter: blur(110px);
+  bottom: -15%;
+  right: -10%;
+  width: 1100px;
+  height: 1100px;
 }
+
+/* Light mode adjustments for the smoke textures */
+[data-theme="light"] .mist-drift-cloud {
+  mix-blend-mode: multiply; /* Hide white, blend dark smoke */
+  opacity: 0.06; /* Extremely subtle dark mist shadow on light background */
+}
+
+[data-theme="light"] .mist-drift-cloud img {
+  filter: invert(1); /* Invert white smoke to black, black to white */
+}
+
 
 /* ============================================================
    19. BOTTOM SAPA LANDSCAPE BACKDROP
