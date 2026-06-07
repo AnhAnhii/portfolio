@@ -2900,7 +2900,7 @@ body.modal-open {
   inset: 0;
   width: 100%;
   height: 100vh;
-  z-index: 1; /* Keep behind content containers (z-index 2) but above body base */
+  z-index: 10; /* Set above content (z-index 2) but below navbar (1000) so it drifts through sections */
   pointer-events: none;
   overflow: hidden;
 }
@@ -2910,7 +2910,7 @@ body.modal-open {
   pointer-events: none;
   will-change: transform;
   mix-blend-mode: screen; /* Hide black, blend white smoke */
-  opacity: 0.15; /* Low opacity so it is visible but never obscures information */
+  opacity: 0.10; /* Very soft opacity so it drifts over text without obscuring information */
   filter: blur(8px); /* Soften smoke edges */
   transition: opacity var(--dur-slow) var(--ease-gentle), filter var(--dur-slow) var(--ease-gentle);
 }
@@ -2954,7 +2954,7 @@ body.modal-open {
 /* Light mode adjustments for the smoke textures */
 [data-theme="light"] .mist-drift-cloud {
   mix-blend-mode: multiply; /* Hide white, blend dark smoke */
-  opacity: 0.06; /* Extremely subtle dark mist shadow on light background */
+  opacity: 0.035; /* Extremely subtle dark mist shadow on light background */
 }
 
 [data-theme="light"] .mist-drift-cloud img {
@@ -3022,5 +3022,76 @@ body.modal-open {
   #contact {
     padding-bottom: calc(var(--section-padding) + 100px);
   }
+}
+
+/* ============================================================
+   20. SAPA TERRACED FIELDS CONTOURS (Topological backdrop)
+   ============================================================ */
+.sapa-contours {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08; /* Wavy, detailed lines in the background */
+  transition: opacity var(--dur-slow) var(--ease-gentle);
+}
+
+.sapa-contours svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sapa-contours path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  transition: stroke var(--dur-slow) var(--ease-gentle);
+}
+
+/* Alternate colors to represent green crops & golden sunlight on water terraces */
+.sapa-contours path:nth-child(even) {
+  stroke: var(--gold);
+}
+
+.sapa-contours-about {
+  top: 5%;
+  height: 90%;
+  opacity: 0.06;
+}
+
+.sapa-contours-projects {
+  top: 10%;
+  height: 85%;
+  opacity: 0.05;
+}
+
+.sapa-contours-personal {
+  top: 5%;
+  height: 90%;
+  opacity: 0.06;
+}
+
+/* Winding Mountain Trail - Terraced contours integration */
+.trail-contours path {
+  stroke: var(--accent);
+  opacity: 0.08;
+  transition: stroke var(--dur-slow) var(--ease-gentle), opacity var(--dur-slow) var(--ease-gentle);
+}
+
+.trail-contours path:nth-child(even) {
+  stroke: var(--gold);
+}
+
+/* Light mode overrides for soft, elegant cream contrasts */
+[data-theme="light"] .sapa-contours {
+  opacity: 0.04;
+}
+
+[data-theme="light"] .trail-contours path {
+  opacity: 0.035;
 }
 
