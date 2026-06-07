@@ -2093,6 +2093,24 @@ ul, ol { list-style: none; }
   color: var(--text-muted);
 }
 
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-link-item {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--dur-base) var(--ease-gentle);
+}
+
+.footer-link-item:hover {
+  color: var(--accent);
+}
+
 .footer-ai-badge {
   display: inline-flex;
   align-items: center;
