@@ -1991,6 +1991,86 @@
   }
 
   /* ----------------------------------------------------------
+     18. MIST DRIFT (Scroll & Auto)
+     ---------------------------------------------------------- */
+  function initMistDrift() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const clouds = document.querySelectorAll('.mist-drift-cloud');
+    if (!clouds.length) return;
+
+    let scrollY = window.scrollY;
+    let time = 0;
+
+    function update() {
+      time += 0.5;
+
+      clouds.forEach((cloud, index) => {
+        const speedX = parseFloat(cloud.getAttribute('data-parallax-x') || 0);
+        const speedY = parseFloat(cloud.getAttribute('data-parallax-y') || 0);
+        const phase = index * 2;
+
+        // Scroll offset
+        const scrollOffsetX = scrollY * speedX;
+        const scrollOffsetY = scrollY * speedY;
+
+        // Slow automatic float (drift)
+        const autoDriftX = Math.sin(time * 0.005 + phase) * 35;
+        const autoDriftY = Math.cos(time * 0.004 + phase) * 20;
+
+        cloud.style.transform = `translate3d(${scrollOffsetX + autoDriftX}px, ${scrollOffsetY + autoDriftY}px, 0)`;
+      });
+
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', () => {
+      scrollY = window.scrollY;
+    }, { passive: true });
+
+    update();
+  }
+
+  /* ----------------------------------------------------------
+     19. SAPA LANDSCAPE PARALLAX (Bottom of page)
+     ---------------------------------------------------------- */
+  function initContactParallax() {
+    const contactSection = document.getElementById('contact');
+    const layers = document.querySelectorAll('.sapa-landscape-backdrop [data-contact-parallax]');
+    if (!contactSection || !layers.length) return;
+
+    let ticking = false;
+
+    function update() {
+      const rect = contactSection.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Calculate translation only when the section is entering or in viewport
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        const totalDistance = viewportHeight + rect.height;
+        const currentProgress = (viewportHeight - rect.top) / totalDistance;
+
+        layers.forEach((layer) => {
+          const speed = parseFloat(layer.getAttribute('data-contact-parallax') || 0);
+          // Shift vertically by up to 75px based on relative scroll position
+          const translateY = (currentProgress - 0.5) * speed * 150;
+          layer.style.transform = `translate3d(0, ${translateY}px, 0)`;
+        });
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    update();
+  }
+
+  /* ----------------------------------------------------------
      20. INIT
      ---------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -2014,5 +2094,7 @@
     initTrailScroll();
     initTiltCards();
     initMagneticButtons();
+    initMistDrift();
+    initContactParallax();
   });
 })();

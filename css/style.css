@@ -35,6 +35,8 @@
   --gold-soft:     rgba(214,158,46,0.08);
   --green:         #68D391;  /* spring leaves */
   --mist:          rgba(139,154,175,0.06);
+  --mist-glow:     rgba(79, 209, 197, 0.045);
+  --mist-soft:     rgba(139, 154, 175, 0.02);
 
   /* Mountain layers */
   --mountain-far:    #0E1218;
@@ -108,6 +110,8 @@
   --mountain-mid:    #E5E1D8;
   --mountain-near:   #DDD9D0;
   --mountain-accent: #D5D0C7;
+  --mist-glow:       rgba(255, 255, 255, 0.55);
+  --mist-soft:       rgba(240, 237, 230, 0.2);
   --overlay:       rgba(250,250,247,0.92);
 }
 
@@ -2887,3 +2891,123 @@ body.modal-open {
   background: var(--border-subtle);
   margin-left: 2.25rem;
 }
+
+/* ============================================================
+   18. SAPA DRIFTING MIST EFFECT
+   ============================================================ */
+.mist-drift-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1; /* Keep behind content containers (z-index 2) but above body base */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mist-drift-cloud {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  transition: opacity var(--dur-slow) var(--ease-gentle);
+}
+
+.mist-cloud-1 {
+  top: 15%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--mist-glow) 0%, var(--mist-soft) 60%, transparent 100%);
+  filter: blur(80px);
+}
+
+.mist-cloud-2 {
+  top: 45%;
+  right: -15%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--mist-glow) 0%, var(--mist-soft) 65%, transparent 100%);
+  filter: blur(100px);
+}
+
+.mist-cloud-3 {
+  bottom: 10%;
+  left: -20%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--mist-glow) 0%, var(--mist-soft) 60%, transparent 100%);
+  filter: blur(90px);
+}
+
+.mist-cloud-4 {
+  bottom: -10%;
+  right: 15%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, var(--mist-glow) 0%, var(--mist-soft) 70%, transparent 100%);
+  filter: blur(110px);
+}
+
+/* ============================================================
+   19. BOTTOM SAPA LANDSCAPE BACKDROP
+   ============================================================ */
+.sapa-landscape-backdrop {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  height: 220px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  margin-bottom: -2px; /* Prevent subpixel rounding gaps with the footer */
+}
+
+.sapa-landscape-backdrop svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sapa-landscape-backdrop path {
+  will-change: transform;
+  transition: fill var(--dur-slow) var(--ease-gentle);
+}
+
+/* Color layers mapped to design system mountain variables */
+.sapa-landscape-backdrop .landscape-far {
+  fill: var(--mountain-far);
+}
+
+.sapa-landscape-backdrop .landscape-mid {
+  fill: var(--mountain-mid);
+}
+
+.sapa-landscape-backdrop .landscape-terrace-1 {
+  fill: var(--mountain-near);
+}
+
+.sapa-landscape-backdrop .landscape-terrace-2 {
+  fill: var(--mountain-accent);
+}
+
+.sapa-landscape-backdrop .landscape-terrace-3 {
+  fill: var(--bg-surface);
+}
+
+/* Adjust contact section padding to avoid text overlapping the SVG */
+#contact {
+  padding-bottom: calc(var(--section-padding) + 160px);
+}
+
+/* Responsive adjustment for landscape height */
+@media (max-width: 768px) {
+  .sapa-landscape-backdrop {
+    height: 140px;
+  }
+  #contact {
+    padding-bottom: calc(var(--section-padding) + 100px);
+  }
+}
+
