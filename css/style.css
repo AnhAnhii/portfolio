@@ -490,6 +490,36 @@ ul, ol { list-style: none; }
   padding: 2rem 1rem;
 }
 
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-content .hero-badge,
+.hero-content .hero-greeting,
+.hero-content .hero-name,
+.hero-content .hero-tagline,
+.hero-content .hero-subtitle,
+.hero-content .hero-cta {
+  opacity: 0;
+  animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-content .hero-badge { animation-delay: 200ms; }
+.hero-content .hero-greeting { animation-delay: 350ms; }
+.hero-content .hero-name { animation-delay: 500ms; }
+.hero-content .hero-tagline { animation-delay: 650ms; }
+.hero-content .hero-subtitle { animation-delay: 800ms; }
+.hero-content .hero-cta { animation-delay: 950ms; }
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -1105,6 +1135,17 @@ ul, ol { list-style: none; }
   stroke-dasharray: 8 6;
   stroke-linecap: round;
   animation: trailWalk 2s linear infinite;
+}
+
+.trail-pointer {
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 2px var(--accent));
+  transition: opacity var(--dur-fast) var(--ease-gentle);
+}
+
+.trail-pointer.active {
+  opacity: 1;
 }
 
 /* Container for alternating items */

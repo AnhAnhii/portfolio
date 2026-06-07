@@ -1899,8 +1899,25 @@
       
       let progress = (startDraw - elementTop) / (elementHeight + startDraw - endDraw);
       progress = Math.max(0, Math.min(1, progress));
+      
+      const offset = length - (progress * length);
+      path.style.strokeDashoffset = offset;
 
-      path.style.strokeDashoffset = length - (progress * length);
+      const pointer = document.querySelector('.trail-pointer');
+      if (pointer) {
+        if (progress > 0 && progress < 1) {
+          pointer.classList.add('active');
+          try {
+            const point = path.getPointAtLength(length - offset);
+            pointer.setAttribute('cx', point.x);
+            pointer.setAttribute('cy', point.y);
+          } catch (e) {
+            // handle error
+          }
+        } else {
+          pointer.classList.remove('active');
+        }
+      }
       ticking = false;
     }
 
@@ -1951,8 +1968,30 @@
     });
   }
 
+  // 19. Magnetic buttons hover physics
+  function initMagneticButtons() {
+    const buttons = document.querySelectorAll('.btn');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) scale(1.02)`;
+        btn.style.transition = 'none';
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+        btn.style.transition = 'transform var(--dur-base) var(--ease-gentle)';
+      });
+    });
+  }
+
   /* ----------------------------------------------------------
-     19. INIT
+     20. INIT
      ---------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -1974,5 +2013,6 @@
     initContactCopy();
     initTrailScroll();
     initTiltCards();
+    initMagneticButtons();
   });
 })();
