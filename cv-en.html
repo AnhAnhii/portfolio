@@ -12,18 +12,18 @@
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     color: #1e293b;
     background: #fff;
-    font-size: 8.8pt;
-    line-height: 1.45;
+    font-size: 8.2pt;
+    line-height: 1.35;
     width: 210mm;
     min-height: 297mm;
     margin: 0 auto;
-    padding: 20px 26px 16px;
+    padding: 12px 20px 8px;
     display: flex;
     flex-direction: column;
   }
 
   @media print {
-    body { padding: 18px 22px 14px; }
+    body { padding: 8px 14px 6px; min-height: auto; }
     .no-print { display: none !important; }
   }
 
@@ -31,60 +31,60 @@
   .header {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding-bottom: 12px;
-    border-bottom: 2.5px solid #0f172a;
-    margin-bottom: 12px;
+    gap: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #0f172a;
+    margin-bottom: 6px;
   }
   .photo {
-    width: 78px; height: 96px;
-    border-radius: 6px; overflow: hidden;
-    border: 2px solid #e2e8f0;
+    width: 70px; height: 86px;
+    border-radius: 5px; overflow: hidden;
+    border: 1.5px solid #e2e8f0;
     flex-shrink: 0;
     background: #f8fafc;
   }
   .photo img { width: 100%; height: 100%; object-fit: cover; }
-  .photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #cbd5e1; }
+  .photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #cbd5e1; }
   .header-text { flex: 1; }
-  .name { font-size: 19pt; font-weight: 700; color: #0f172a; letter-spacing: -0.5px; line-height: 1; }
-  .role { font-size: 9.5pt; font-weight: 600; color: #475569; margin: 3px 0 7px; }
+  .name { font-size: 17pt; font-weight: 700; color: #0f172a; letter-spacing: -0.5px; line-height: 1; }
+  .role { font-size: 8.8pt; font-weight: 600; color: #475569; margin: 1px 0 4px; }
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2px 20px;
-    font-size: 8pt;
+    gap: 1px 16px;
+    font-size: 7.5pt;
     color: #475569;
   }
   .contact-grid .lbl { color: #94a3b8; }
   .contact-grid a { color: #0f172a; text-decoration: underline; }
 
   /* ── SECTION ── */
-  .sec { margin-bottom: 10px; }
+  .sec { margin-bottom: 6px; }
   .sec-title {
-    font-size: 8pt;
+    font-size: 7.2pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #fff;
     background: #0f172a;
-    padding: 3px 8px;
+    padding: 1.5px 5px;
     border-radius: 3px;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
     display: inline-block;
   }
 
   /* ── SUMMARY ── */
   .summary {
-    font-size: 8.5pt;
+    font-size: 8pt;
     color: #334155;
-    line-height: 1.55;
+    line-height: 1.35;
   }
 
   /* ── HIGHLIGHTS ── */
   .highlights {
     display: flex;
     gap: 0;
-    margin: 10px 0;
+    margin: 6px 0;
     border: 1.5px solid #e2e8f0;
     border-radius: 6px;
     overflow: hidden;
@@ -92,63 +92,63 @@
   .hl {
     flex: 1;
     text-align: center;
-    padding: 6px 4px;
+    padding: 3px 1px;
     background: #f8fafc;
     border-right: 1px solid #e2e8f0;
   }
   .hl:last-child { border-right: none; }
-  .hl-n { font-size: 14pt; font-weight: 700; color: #0f172a; line-height: 1; }
-  .hl-l { font-size: 6.5pt; color: #64748b; margin-top: 1px; }
+  .hl-n { font-size: 12pt; font-weight: 700; color: #0f172a; line-height: 1; }
+  .hl-l { font-size: 6pt; color: #64748b; margin-top: 1px; }
 
   /* ── EXPERIENCE ── */
-  .job { margin-bottom: 8px; }
+  .job { margin-bottom: 5px; }
   .job-top { display: flex; justify-content: space-between; align-items: baseline; }
-  .job-title { font-weight: 700; font-size: 9pt; color: #0f172a; }
-  .job-date { font-size: 7.5pt; color: #64748b; white-space: nowrap; font-weight: 500; }
-  .job-co { font-size: 8pt; color: #475569; font-weight: 600; margin-bottom: 3px; }
+  .job-title { font-weight: 700; font-size: 8.5pt; color: #0f172a; }
+  .job-date { font-size: 7pt; color: #64748b; white-space: nowrap; font-weight: 500; }
+  .job-co { font-size: 7.6pt; color: #475569; font-weight: 600; margin-bottom: 1.5px; }
 
-  ul { padding-left: 14px; }
-  li { margin-bottom: 1.5px; font-size: 8.3pt; color: #334155; line-height: 1.45; }
+  ul { padding-left: 10px; }
+  li { margin-bottom: 0.5px; font-size: 7.8pt; color: #334155; line-height: 1.3; }
   li strong { color: #0f172a; font-weight: 600; }
 
   /* ── SKILLS ── */
   .sk-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px 16px;
+    gap: 1px 16px;
   }
-  .sk-row { font-size: 8pt; display: flex; gap: 4px; }
-  .sk-cat { font-weight: 600; color: #0f172a; min-width: 76px; flex-shrink: 0; }
+  .sk-row { font-size: 7.5pt; display: flex; gap: 4px; }
+  .sk-cat { font-weight: 600; color: #0f172a; min-width: 68px; flex-shrink: 0; }
   .sk-val { color: #475569; }
 
   /* ── EDUCATION ── */
   .edu-top { display: flex; justify-content: space-between; align-items: baseline; }
-  .edu-deg { font-weight: 600; font-size: 8.5pt; }
-  .edu-sch { font-size: 8pt; color: #475569; }
-  .edu-note { font-size: 7.5pt; color: #64748b; font-style: italic; }
+  .edu-deg { font-weight: 600; font-size: 8pt; }
+  .edu-sch { font-size: 7.5pt; color: #475569; }
+  .edu-note { font-size: 7pt; color: #64748b; font-style: italic; }
 
   /* ── BOTTOM ROW ── */
   .bottom-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px 20px;
-    margin-top: 2px;
+    gap: 3px 16px;
+    margin-top: 1px;
   }
-  .bottom-row .sec { margin-bottom: 4px; }
+  .bottom-row .sec { margin-bottom: 1.5px; }
 
-  .lang { font-size: 8pt; }
+  .lang { font-size: 7.5pt; }
   .lang b { font-weight: 600; }
-  .interests { font-size: 7.8pt; color: #475569; line-height: 1.4; }
-  .ref { font-size: 7.5pt; color: #64748b; font-style: italic; margin-top: 3px; }
+  .interests { font-size: 7.2pt; color: #475569; line-height: 1.3; }
+  .ref { font-size: 7pt; color: #64748b; font-style: italic; margin-top: 1.5px; }
 
   /* ── CERT ── */
   .cert-box {
-    font-size: 8pt; color: #475569;
-    padding: 5px 8px;
+    font-size: 7.5pt; color: #475569;
+    padding: 3px 5px;
     background: #f8fafc;
-    border-left: 3px solid #475569;
+    border-left: 2.5px solid #475569;
     border-radius: 0 4px 4px 0;
-    line-height: 1.45;
+    line-height: 1.35;
     border-top: 1px solid #e2e8f0;
     border-right: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
@@ -157,10 +157,10 @@
   /* ── FOOTER ── */
   .footer {
     margin-top: auto;
-    padding-top: 6px;
+    padding-top: 3px;
     border-top: 1px solid #e2e8f0;
     text-align: center;
-    font-size: 7pt;
+    font-size: 6.5pt;
     color: #94a3b8;
   }
 
@@ -192,7 +192,7 @@
       <div><span class="lbl">Email:</span> <a href="mailto:maducanh.work@gmail.com">maducanh.work@gmail.com</a></div>
       <div><span class="lbl">Phone:</span> 0825 937 727</div>
       <div><span class="lbl">Birthdate:</span> April 26, 1996 · Male</div>
-      <div><span class="lbl">Location:</span> Sapa / Ho Chi Minh City (Remote-ready)</div>
+      <div><span class="lbl">Location:</span> Sapa / Ho Chi Minh City (On-site / Travel ready)</div>
       <div><span class="lbl">Portfolio:</span> <a href="https://portfolio.maducanh.art">portfolio.maducanh.art</a></div>
       <div><span class="lbl">Status:</span> <strong style="color:#0f172a">Available immediately</strong></div>
     </div>
