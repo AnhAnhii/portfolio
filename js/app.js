@@ -964,6 +964,18 @@
       }
     });
 
+    // Update CV download link based on language
+    const cvDownloadBtn = document.querySelector('[data-i18n="hero.cta.cv"]');
+    if (cvDownloadBtn) {
+      if (lang === 'vi') {
+        cvDownloadBtn.setAttribute('href', 'assets/CV-Ma-Duc-Anh-VI.pdf');
+        cvDownloadBtn.setAttribute('download', 'CV-Ma-Duc-Anh-VI.pdf');
+      } else {
+        cvDownloadBtn.setAttribute('href', 'assets/CV-Ma-Duc-Anh-EN.pdf');
+        cvDownloadBtn.setAttribute('download', 'CV-Ma-Duc-Anh-EN.pdf');
+      }
+    }
+
     // Update active modal content if open
     const modal = document.getElementById('project-modal');
     if (modal && modal.classList.contains('active') && activeProjectId) {

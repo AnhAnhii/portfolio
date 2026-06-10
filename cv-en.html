@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CV — Ma Duc Anh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #1e293b;
+    background: #fff;
+    font-size: 8.8pt;
+    line-height: 1.45;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20px 26px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media print {
+    body { padding: 18px 22px 14px; }
+    .no-print { display: none !important; }
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2.5px solid #0f172a;
+    margin-bottom: 12px;
+  }
+  .photo {
+    width: 78px; height: 96px;
+    border-radius: 6px; overflow: hidden;
+    border: 2px solid #e2e8f0;
+    flex-shrink: 0;
+    background: #f8fafc;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #cbd5e1; }
+  .header-text { flex: 1; }
+  .name { font-size: 19pt; font-weight: 700; color: #0f172a; letter-spacing: -0.5px; line-height: 1; }
+  .role { font-size: 9.5pt; font-weight: 600; color: #475569; margin: 3px 0 7px; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 20px;
+    font-size: 8pt;
+    color: #475569;
+  }
+  .contact-grid .lbl { color: #94a3b8; }
+  .contact-grid a { color: #0f172a; text-decoration: underline; }
+
+  /* ── SECTION ── */
+  .sec { margin-bottom: 10px; }
+  .sec-title {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background: #0f172a;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    display: inline-block;
+  }
+
+  /* ── SUMMARY ── */
+  .summary {
+    font-size: 8.5pt;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  /* ── HIGHLIGHTS ── */
+  .highlights {
+    display: flex;
+    gap: 0;
+    margin: 10px 0;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .hl {
+    flex: 1;
+    text-align: center;
+    padding: 6px 4px;
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+  }
+  .hl:last-child { border-right: none; }
+  .hl-n { font-size: 14pt; font-weight: 700; color: #0f172a; line-height: 1; }
+  .hl-l { font-size: 6.5pt; color: #64748b; margin-top: 1px; }
+
+  /* ── EXPERIENCE ── */
+  .job { margin-bottom: 8px; }
+  .job-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-weight: 700; font-size: 9pt; color: #0f172a; }
+  .job-date { font-size: 7.5pt; color: #64748b; white-space: nowrap; font-weight: 500; }
+  .job-co { font-size: 8pt; color: #475569; font-weight: 600; margin-bottom: 3px; }
+
+  ul { padding-left: 14px; }
+  li { margin-bottom: 1.5px; font-size: 8.3pt; color: #334155; line-height: 1.45; }
+  li strong { color: #0f172a; font-weight: 600; }
+
+  /* ── SKILLS ── */
+  .sk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 16px;
+  }
+  .sk-row { font-size: 8pt; display: flex; gap: 4px; }
+  .sk-cat { font-weight: 600; color: #0f172a; min-width: 76px; flex-shrink: 0; }
+  .sk-val { color: #475569; }
+
+  /* ── EDUCATION ── */
+  .edu-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .edu-deg { font-weight: 600; font-size: 8.5pt; }
+  .edu-sch { font-size: 8pt; color: #475569; }
+  .edu-note { font-size: 7.5pt; color: #64748b; font-style: italic; }
+
+  /* ── BOTTOM ROW ── */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    margin-top: 2px;
+  }
+  .bottom-row .sec { margin-bottom: 4px; }
+
+  .lang { font-size: 8pt; }
+  .lang b { font-weight: 600; }
+  .interests { font-size: 7.8pt; color: #475569; line-height: 1.4; }
+  .ref { font-size: 7.5pt; color: #64748b; font-style: italic; margin-top: 3px; }
+
+  /* ── CERT ── */
+  .cert-box {
+    font-size: 8pt; color: #475569;
+    padding: 5px 8px;
+    background: #f8fafc;
+    border-left: 3px solid #475569;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.45;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 7pt;
+    color: #94a3b8;
+  }
+
+  /* ── PRINT BTN ── */
+  .pbtn {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #0f172a; color: #fff; border: none;
+    padding: 10px 20px; border-radius: 8px; cursor: pointer;
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    box-shadow: 0 4px 16px rgba(15,23,42,0.15);
+  }
+  .pbtn:hover { background: #1e293b; }
+</style>
+</head>
+<body>
+
+<button class="pbtn no-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="photo">
+    <img src="assets/photos/avatar.jpg" alt="Ma Duc Anh"
+         onerror="this.parentElement.innerHTML='<div class=photo-placeholder>👤</div>'" />
+  </div>
+  <div class="header-text">
+    <div class="name">MA DUC ANH</div>
+    <div class="role">Operations & Automation Specialist</div>
+    <div class="contact-grid">
+      <div><span class="lbl">Email:</span> <a href="mailto:maducanh.work@gmail.com">maducanh.work@gmail.com</a></div>
+      <div><span class="lbl">Phone:</span> 0825 937 727</div>
+      <div><span class="lbl">Birthdate:</span> April 26, 1996 · Male</div>
+      <div><span class="lbl">Location:</span> Sapa / Ho Chi Minh City (Remote-ready)</div>
+      <div><span class="lbl">Portfolio:</span> <a href="https://portfolio.maducanh.art">portfolio.maducanh.art</a></div>
+      <div><span class="lbl">Status:</span> <strong style="color:#0f172a">Available immediately</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SUMMARY ═══════════ -->
+<div class="sec">
+  <span class="sec-title">Summary</span>
+  <p class="summary">
+    Operations specialist with <strong>3+ years</strong> of experience managing multi-channel customer service operations for 3 e-commerce brands under the Do Mixi ecosystem (Mixer · Mixishop · Mixifood). Self-taught developer who built internal applications to handle <strong>100K+ orders</strong>, deployed in production and used daily by a 10-person team. Successfully integrated <strong>OpenAI / Gemini APIs</strong> into real-world workflows. Diverse background spanning international hospitality, freelance tour guiding, and event coordination.
+  </p>
+</div>
+
+<!-- ═══════════ HIGHLIGHTS ═══════════ -->
+<div class="highlights">
+  <div class="hl"><div class="hl-n">3+</div><div class="hl-l">years in production</div></div>
+  <div class="hl"><div class="hl-n">100K+</div><div class="hl-l">orders processed</div></div>
+  <div class="hl"><div class="hl-n">-70%</div><div class="hl-l">time per order</div></div>
+  <div class="hl"><div class="hl-n">3</div><div class="hl-l">brands managed</div></div>
+  <div class="hl"><div class="hl-n">34+</div><div class="hl-l">events coordinated</div></div>
+</div>
+
+<!-- ═══════════ EXPERIENCE ═══════════ -->
+<div class="sec">
+  <span class="sec-title">Work Experience</span>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="job-title">Operations & Automation Specialist</div>
+      <div class="job-date">2022 — Present · 3+ years</div>
+    </div>
+    <div class="job-co">Mixer · Mixishop · Mixifood — Do Mixi Ecosystem (Remote · Flexible hours)</div>
+    <ul>
+      <li><strong>Built internal systems processing 100,000+ orders</strong> across 4 channels (Facebook, Zalo, Email, Hotline) for 3 e-commerce brands — supporting 10 CS representatives, with peak volumes of 2,000–3,000 orders/month/brand</li>
+      <li><strong>Developed custom internal applications</strong> using Google Apps Script / JavaScript: automatically parsing customer info, calculating order totals, performing CRUD operations on orders, and generating payment QR codes → <strong>reduced processing time by 70%</strong>, lowering error rates from ~15% to ~2%</li>
+      <li><strong>Integrated OpenAI & Gemini APIs</strong> into daily customer support workflows — automating query classification, reply draft generation, and response template formatting</li>
+      <li>Designed banners, size charts, and product images for the Marketing team using AI design tools — applied directly on Shopee & TikTok Shop</li>
+      <li>Proactively developed new features → trained and onboarded the entire team · Established inventory management and sales statistics workflows</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="job-title">Customer Service Representative — Group Bookings</div>
+      <div class="job-date">07/2025 — Present</div>
+    </div>
+    <div class="job-co">Indigo Restaurant La Cham — Sapa</div>
+    <ul>
+      <li>Served <strong>5–20 tour groups daily</strong> (ranging from 4 to 50 guests per group) — handled multi-channel bookings (Zalo, phone, Facebook) with tour operators</li>
+      <li>Managed on-site service operations during peak tourist seasons, coordinating kitchen and service staff for large groups of up to 50 guests</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="job-title">Freelance: Tour Guide · Event Coordinator · Designer</div>
+      <div class="job-date">2018 — 2022</div>
+    </div>
+    <div class="job-co">Hanoi (concurrent with university studies)</div>
+    <ul>
+      <li>Tour guide for <strong>~20 student groups (middle/high school)</strong> — largest group exceeding 100+ students, managed all logistics from A to Z</li>
+      <li>Provided logistics and coordination support for <strong>34+ events</strong> of various formats (workshops, school trips, public events) · Designed banners and posters for local small businesses</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-top">
+      <div class="job-title">Bartender → Supervisor (Promoted)</div>
+      <div class="job-date">2016 — 2017</div>
+    </div>
+    <div class="job-co">Backpacker Hotel — Sapa</div>
+    <ul>
+      <li>Managed front-of-house operations catering to international travelers (Europe, US, Australia) — <strong>promoted from bartender to supervisor</strong> after 6 months</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════ SKILLS ═══════════ -->
+<div class="sec">
+  <span class="sec-title">Skills</span>
+  <div class="sk-grid">
+    <div class="sk-row"><div class="sk-cat">Automation</div><div class="sk-val">Google Apps Script · JavaScript — 3 years in production</div></div>
+    <div class="sk-row"><div class="sk-cat">AI Integration</div><div class="sk-val">OpenAI API · Gemini API · Prompt Engineering</div></div>
+    <div class="sk-row"><div class="sk-cat">Operations</div><div class="sk-val">Multi-channel CS · Order processing · Inventory management</div></div>
+    <div class="sk-row"><div class="sk-cat">Web Dev</div><div class="sk-val">HTML · CSS · JS · React · TypeScript</div></div>
+    <div class="sk-row"><div class="sk-cat">Design</div><div class="sk-val">Photoshop · Canva · AI Design Tools</div></div>
+    <div class="sk-row"><div class="sk-cat">Productivity</div><div class="sk-val">Google Workspace · Notion · Airtable · Git</div></div>
+  </div>
+</div>
+
+<!-- ═══════════ EDUCATION + CERTIFICATE ═══════════ -->
+<div class="bottom-row">
+  <div class="sec">
+    <span class="sec-title">Education</span>
+    <div class="edu-top">
+      <div class="edu-deg">Bachelor of Vietnamese Studies</div>
+      <div class="job-date">2017 — 2024</div>
+    </div>
+    <div class="edu-sch">Thang Long University, Hanoi</div>
+    <div class="edu-note">Concurrent work and study — hospitality & freelance activities throughout the program</div>
+  </div>
+  <div class="sec">
+    <span class="sec-title">Training & Background</span>
+    <div class="cert-box">
+      All technical skills (Apps Script, JS, AI API, Web Dev) are <strong>self-taught by solving real-world challenges</strong> over 3+ years. Internal production systems running daily serve as proof of practical capability. Details: Portfolio.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ LANGUAGES + INTERESTS ═══════════ -->
+<div class="bottom-row">
+  <div class="sec">
+    <span class="sec-title">Languages</span>
+    <div class="lang">
+      <b>Vietnamese:</b> Native<br>
+      <b>English:</b> Conversational — communicated with international guests (Europe, US, Australia) + proficient in reading technical documentation
+    </div>
+  </div>
+  <div class="sec">
+    <span class="sec-title">Interests</span>
+    <div class="interests">
+      Exploring new AI tools · Trekking & hiking · Reading about product/ops · Building side projects · Beverage mixology
+    </div>
+    <div class="ref">References: Available upon request.</div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  Full Portfolio + Case Studies at: portfolio.maducanh.art · CV updated June 2026
+</div>
+
+</body>
+</html>
